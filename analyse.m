@@ -11,4 +11,4 @@ for i=1:m
 end
 
 [out,idx] = sort(count,1,'descend');
-max = idx(1:7,1)
+max = idx(1:8,1)
