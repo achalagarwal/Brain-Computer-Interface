@@ -1,3 +1,10 @@
+c = zeros(8,4);
+for i = 1:4
+    file = ['s0_',int2str(i),'.mat'];
+    load(file);
+
+
+
 ARRAY = zeros(40*32,19);
 count = 1;
 elabel = zeros(40*32,1);
@@ -23,7 +30,9 @@ w = w(1,1:8);
 % [selectedFeatures10] = feast('cmi',8,ARRAY,elabel);
 d5 = [w',selectedFeatures2,selectedFeatures3,selectedFeatures4,selectedFeatures5,selectedFeatures6,selectedFeatures7,selectedFeatures8,selectedFeatures9];
 trie = reshape(d5,8,9);
-c10= analyse(trie);
+c(:,i) = analyse(trie);
+end
+final = analyse(c);
 % 
 % % where algName is:
 % %  mim, mrmr, cmim, jmi, disr, cife, icap, condred, cmi, relief
